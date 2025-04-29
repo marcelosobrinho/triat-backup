@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triat Cloud Backup - Proteção de Dados em Nuvem</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        triat: {
+                            blue: '#0066cc',
+                            dark: '#004080',
+                            light: '#3399ff'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-gradient {
+            background: linear-gradient(135deg, #0066cc 0%, #3399ff 100%);
+        }
+        .feature-icon {
+            background-color: rgba(0, 102, 204, 0.1);
+        }
+        .plan-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .checkmark {
+            color: #0066cc;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-gray-800">
+    <!-- Header/Navigation -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center">
+                <div class="w-10 h-10 rounded-full bg-triat-blue flex items-center justify-center mr-3">
+                    <i class="fas fa-cloud text-white text-xl"></i>
+                </div>
+                <span class="text-xl font-bold text-triat-blue">Triat Backup</span>
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#features" class="font-medium hover:text-triat-blue transition">Recursos</a>
+                <a href="#plans" class="font-medium hover:text-triat-blue transition">Planos</a>
+                <a href="#faq" class="font-medium hover:text-triat-blue transition">FAQ</a>
+                <a href="#contact" class="font-medium hover:text-triat-blue transition">Contato</a>
+            </nav>
+            <button class="md:hidden text-gray-600">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient text-white py-16 md:py-24">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">Seus dados protegidos com <span class="underline">segurança de datacenter</span> e simplicidade de um clique</h1>
+                <p class="text-xl mb-8 opacity-90">A solução de backup em nuvem pensada para sua empresa nunca mais perder dados.</p>
+                <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
+                    <a href="#plans" class="bg-white text-triat-blue font-bold py-3 px-8 rounded-lg hover:bg-gray-100 transition duration-300 text-center">Conheça os planos</a>
+                    <a href="https://wa.me/55659981105299" class="border-2 border-white text-white font-bold py-3 px-8 rounded-lg hover:bg-white hover:bg-opacity-10 transition duration-300 text-center">Fale conosco</a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <div class="relative w-full max-w-md">
+                    <div class="absolute -top-10 -left-10 w-32 h-32 bg-white bg-opacity-20 rounded-full"></div>
+                    <div class="absolute -bottom-10 -right-10 w-32 h-32 bg-white bg-opacity-20 rounded-full"></div>
+                    <div class="relative bg-white bg-opacity-20 backdrop-blur-sm rounded-2xl p-6 border border-white border-opacity-30 shadow-xl">
+                        <div class="flex justify-between items-center mb-6">
+                            <div class="flex items-center">
+                                <div class="w-10 h-10 rounded-full bg-triat-blue flex items-center justify-center mr-3">
+                                    <i class="fas fa-cloud text-white"></i>
+                                </div>
+                                <span class="font-bold text-white">Triat Backup</span>
+                            </div>
+                            <div class="text-xs bg-white bg-opacity-30 px-2 py-1 rounded">PRO</div>
+                        </div>
+                        <div class="bg-white bg-opacity-30 rounded-lg p-4 mb-4">
+                            <div class="flex justify-between mb-2">
+                                <span class="text-sm font-medium">Espaço utilizado</span>
+                                <span class="text-sm font-bold">45/250 GB</span>
+                            </div>
+                            <div class="w-full bg-white bg-opacity-50 rounded-full h-2">
+                                <div class="bg-triat-blue h-2 rounded-full" style="width: 18%"></div>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-2 gap-4 mb-6">
+                            <div class="bg-white bg-opacity-20 rounded-lg p-3 text-center">
+                                <div class="text-xs mb-1">Último backup</div>
+                                <div class="font-bold">Hoje, 02:30</div>
+                            </div>
+                            <div class="bg-white bg-opacity-20 rounded-lg p-3 text-center">
+                                <div class="text-xs mb-1">Próximo backup</div>
+                                <div class="font-bold">Amanhã, 02:30</div>
+                            </div>
+                        </div>
+                        <button class="w-full bg-triat-blue hover:bg-triat-dark text-white font-bold py-3 px-4 rounded-lg transition duration-300 flex items-center justify-center">
+                            <i class="fas fa-redo mr-2"></i> Restaurar arquivos
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-triat-blue mb-4">Por que escolher o Triat Cloud Backup?</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Tecnologia avançada para proteger o que é mais importante para seu negócio</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition duration-300">
+                    <div class="w-16 h-16 feature-icon rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-lock text-triat-blue text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Criptografia de ponta a ponta</h3>
+                    <p class="text-gray-600">Seus dados são criptografados antes mesmo de saírem do seu dispositivo, garantindo máxima segurança durante todo o processo.</p>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition duration-300">
+                    <div class="w-16 h-16 feature-icon rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-robot text-triat-blue text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Backup automático</h3>
+                    <p class="text-gray-600">Configure uma vez e esqueça. Seus backups são realizados automaticamente conforme sua programação, sem necessidade de intervenção.</p>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition duration-300">
+                    <div class="w-16 h-16 feature-icon rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-history text-triat-blue text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Retenção de 30 dias</h3>
+                    <p class="text-gray-600">Recupere arquivos de até 30 dias atrás com nossa tecnologia de versionamento, permitindo restaurar versões específicas de documentos.</p>
+                </div>
+                
+                <!-- Feature 4 -->
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition duration-300">
+                    <div class="w-16 h-16 feature-icon rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-server text-triat-blue text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Infraestrutura redundante</h3>
+                    <p class="text-gray-600">Nossos datacenters possuem redundância em todos os níveis, garantindo disponibilidade de 99,99% e proteção contra falhas.</p>
+                </div>
+                
+                <!-- Feature 5 -->
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition duration-300">
+                    <div class="w-16 h-16 feature-icon rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-headset text-triat-blue text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Suporte especializado</h3>
+                    <p class="text-gray-600">Nossa equipe de suporte técnico está disponível 24/7 para ajudar com qualquer necessidade, desde configuração até recuperação de dados.</p>
+                </div>
+                
+                <!-- Feature 6 -->
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition duration-300">
+                    <div class="w-16 h-16 feature-icon rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-chart-line text-triat-blue text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Escalável com seu negócio</h3>
+                    <p class="text-gray-600">Aumente ou diminua seu espaço de armazenamento conforme necessário, pagando apenas pelo que usar, sem custos ocultos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Plans Section -->
+    <section id="plans" class="py-16">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-triat-blue mb-4">Planos sob medida para sua empresa</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Escolha o plano ideal para o tamanho do seu negócio e necessidades de armazenamento</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Plano Iniciante -->
+                <div class="plan-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300 border border-gray-100">
+                    <div class="bg-triat-blue text-white py-4 px-6">
+                        <h3 class="font-bold text-xl">Iniciante</h3>
+                        <p class="text-sm opacity-90">Pequenos escritórios</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-3xl font-bold mb-2">R$ 89<span class="text-lg text-gray-500">/mês</span></div>
+                        <div class="text-sm text-gray-500 mb-6">100 GB de espaço útil</div>
+                        
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-start">
+                                <i class="fas fa-check checkmark mt-1 mr-2"></i>
+                                <span>Backup diário automático</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check checkmark mt-1 mr-2"></i>
+                                <span>Retenção de 30 dias</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check checkmark mt-1 mr-2"></i>
+                                <span>Criptografia AES-256</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check checkmark mt-1 mr-2"></i>
+                                <span>Suporte por e-mail</span>
+                            </li>
+                        </ul>
+                        
+                        <a href="https://wa.me/55659981105299?text=Olá,%20gostaria%20de%20assinar%20o%20plano%20Iniciante%20de%20100GB%20por%20R$89/mês" class="block w-full bg-triat-blue hover:bg-triat-dark text-white font-bold py-3 px-4 rounded-lg transition duration-300 text-center">
+                            Assinar agora
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Plano Profissional -->
+                <div class="plan-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300 border border-gray-100 transform scale-105 relative">
+                    <div class="absolute top-0 right-0 bg-triat-dark text-white text-xs font-bold px-3 py-1 rounded-bl-lg">POPULAR</div>
+                    <div class="bg-triat-dark text-white py-4 px-6">
+                        <h3 class="font-bold text-xl">Profissional</h3>
+                        <p class="text-sm opacity-90">Contabilidades e lojas</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-3xl font-bold mb-2">R$ 199<span class="text-lg text-gray-500">/mês</span></div>
+                        <div class="text-sm text-gray-500 mb-6">250 GB de espaço útil</div>
+                        
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-start">
+                                <i class="fas fa-check checkmark mt-1 mr-2"></i>
+                                <span>Todos os recursos do Iniciante</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check checkmark mt-1 mr-2"></i>
+                                <span>Backup múltiplo diário</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check checkmark mt-1 mr-2"></i>
+                                <span>Restauração granular</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check checkmark mt-1 mr-2"></i>
+                                <span>Suporte prioritário</span>
+                            </li>
+                        </ul>
+                        
+                        <a href="https://wa.me/55659981105299?text=Olá,%20gostaria%20de%20assinar%20o%20plano%20Profissional%20de%20250GB%20por%20R$199/mês" class="block w-full bg-triat-dark hover:bg-triat-blue text-white font-bold py-3 px-4 rounded-lg transition duration-300 text-center">
+                            Assinar agora
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Plano Empresarial -->
+                <div class="plan-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300 border border-gray-100">
+                    <div class="bg-triat-blue text-white py-4 px-6">
+                        <h3 class="font-bold text-xl">Empresarial</h3>
+                        <p class="text-sm opacity-90">Empresas em crescimento</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-3xl font-bold mb-2">R$ 379<span class="text-lg text-gray-500">/mês</span></div>
+                        <div class="text-sm text-gray-500 mb-6">500 GB de espaço útil</div>
+                        
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-start">
+                                <i class="fas fa-check checkmark mt-1 mr-2"></i>
+                                <span>Todos os recursos do Profissional</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check checkmark mt-1 mr-2"></i>
+                                <span>Backup em tempo real</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check checkmark mt-1 mr-2"></i>
+                                <span>Até 10 usuários</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check checkmark mt-1 mr-2"></i>
+                                <span>Suporte 24/7</span>
+                            </li>
+                        </ul>
+                        
+                        <a href="https://wa.me/55659981105299?text=Olá,%20gostaria%20de%20assinar%20o%20plano%20Empresarial%20de%20500GB%20por%20R$379/mês" class="block w-full bg-triat-blue hover:bg-triat-dark text-white font-bold py-3 px-4 rounded-lg transition duration-300 text-center">
+                            Assinar agora
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Plano Corporativo -->
+                <div class="plan-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300 border border-gray-100">
+                    <div class="bg-triat-blue text-white py-4 px-6">
+                        <h3 class="font-bold text-xl">Corporativo</h3>
+                        <p class="text-sm opacity-90">Grandes volumes de dados</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-3xl font-bold mb-2">R$ 699<span class="text-lg text-gray-500">/mês</span></div>
+                        <div class="text-sm text-gray-500 mb-6">1 TB de espaço útil</div>
+                        
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-start">
+                                <i class="fas fa-check checkmark mt-1 mr-2"></i>
+                                <span>Todos os recursos do Empresarial</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check checkmark mt-1 mr-2"></i>
+                                <span>Usuários ilimitados</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check checkmark mt-1 mr-2"></i>
+                                <span>Relatórios avançados</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check checkmark mt-1 mr-2"></i>
+                                <span>Gerente de conta dedicado</span>
+                            </li>
+                        </ul>
+                        
+                        <a href="https://wa.me/55659981105299?text=Olá,%20gostaria%20de%20assinar%20o%20plano%20Corporativo%20de%201TB%20por%20R$699/mês" class="block w-full bg-triat-blue hover:bg-triat-dark text-white font-bold py-3 px-4 rounded-lg transition duration-300 text-center">
+                            Assinar agora
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <p class="text-lg">Precisa de mais espaço ou recursos personalizados?</p>
+                <a href="https://wa.me/55659981105299?text=Olá,%20preciso%20de%20um%20plano%20personalizado%20com%20mais%20espaço%20ou%20recursos%20especiais" class="inline-block mt-4 text-triat-blue font-bold hover:underline">Fale conosco sobre soluções sob medida</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-triat-blue mb-4">O que nossos clientes dizem</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Empresas que confiam na Triat para proteger seus dados</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white p-8 rounded-xl shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">"Depois de perder dados importantes em um ataque de ransomware, migramos para o Triat Cloud Backup. A restauração foi simples e salvou nosso negócio. Recomendo fortemente!"</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 rounded-full bg-gray-300 mr-4 overflow-hidden">
+                            <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Cliente" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Ana Carolina</h4>
+                            <p class="text-sm text-gray-500">Diretora, Contabilidade MC</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-white p-8 rounded-xl shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">"O suporte técnico da Triat é excepcional. Quando precisamos restaurar arquivos de 3 semanas atrás, eles nos guiaram passo a passo e recuperamos tudo em minutos."</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 rounded-full bg-gray-300 mr-4 overflow-hidden">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Cliente" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Ricardo Almeida</h4>
+                            <p class="text-sm text-gray-500">CTO, Loja Virtual TechPlus</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-white p-8 rounded-xl shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">"Como empresa em crescimento, precisávamos de uma solução escalável. A Triat nos permite aumentar o armazenamento conforme necessário, sem complicações."</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 rounded-full bg-gray-300 mr-4 overflow-hidden">
+                            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Cliente" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Fernanda Oliveira</h4>
+                            <p class="text-sm text-gray-500">Gerente de TI, Consultoria Finanças</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-16">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-triat-blue mb-4">Perguntas frequentes</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Tire suas dúvidas sobre o Triat Cloud Backup</p>
+            </div>
+            
+            <div class="max-w-3xl mx-auto">
+                <!-- FAQ Item 1 -->
+                <div class="mb-6 border-b border-gray-200 pb-6">
+                    <button class="faq-question flex justify-between items-center w-full text-left font-bold text-lg text-gray-800 hover:text-triat-blue transition duration-300">
+                        <span>Como funciona o processo de backup?</span>
+                        <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer mt-3 text-gray-600 hidden">
+                        <p>O Triat Cloud Backup utiliza um aplicativo leve que você instala em seus dispositivos. Após configurar quais pastas e arquivos deseja proteger, o software faz uma cópia inicial completa de seus dados. A partir daí, apenas as alterações são sincronizadas automáticamente conforme sua programação, economizando banda e tempo.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 2 -->
+                <div class="mb-6 border-b border-gray-200 pb-6">
+                    <button class="faq-question flex justify-between items-center w-full text-left font-bold text-lg text-gray-800 hover:text-triat-blue transition duration-300">
+                        <span>Meus dados estão realmente seguros?</span>
+                        <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer mt-3 text-gray-600 hidden">
+                        <p>Absolutamente. Utilizamos criptografia AES-256, o mesmo padrão adotado por bancos e órgãos governamentais. Seus dados são criptografados antes mesmo de saírem do seu dispositivo e permanecem protegidos em nossos datacenters com certificação ISO 27001. Além disso, você pode optar por usar sua própria chave de criptografia para maior controle.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 3 -->
+                <div class="mb-6 border-b border-gray-200 pb-6">
+                    <button class="faq-question flex justify-between items-center w-full text-left font-bold text-lg text-gray-800 hover:text-triat-blue transition duration-300">
+                        <span>Quanto tempo leva para restaurar meus arquivos?</span>
+                        <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer mt-3 text-gray-600 hidden">
+                        <p>O tempo de restauração varia conforme o tamanho dos arquivos e sua conexão com a internet. Para arquivos individuais ou pastas pequenas, a restauração é quase instantânea. Para backups completos de grandes volumes, nosso sistema otimiza a transferência para garantir a máxima velocidade possível. Você pode restaurar diretamente do nosso aplicativo ou via navegador web.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 4 -->
+                <div class="mb-6 border-b border-gray-200 pb-6">
+                    <button class="faq-question flex justify-between items-center w-full text-left font-bold text-lg text-gray-800 hover:text-triat-blue transition duration-300">
+                        <span>Posso migrar de outro serviço de backup?</span>
+                        <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer mt-3 text-gray-600 hidden">
+                        <p>Sim, oferecemos suporte completo para migração de outros serviços. Nossa equipe pode ajudar a transferir seus dados existentes sem custo adicional quando você assina um de nossos planos empresariais. Para planos menores, fornecemos ferramentas e instruções detalhadas para facilitar o processo.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 5 -->
+                <div class="mb-6 border-b border-gray-200 pb-6">
+                    <button class="faq-question flex justify-between items-center w-full text-left font-bold text-lg text-gray-800 hover:text-triat-blue transition duration-300">
+                        <span>E se eu precisar de mais espaço?</span>
+                        <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer mt-3 text-gray-600 hidden">
+                        <p>Você pode aumentar seu espaço de armazenamento a qualquer momento diretamente pelo painel de controle. O valor adicional será cobrado proporcionalmente ao restante do seu ciclo de faturamento. Para necessidades acima de 1TB, entre em contato com nosso time comercial para discutir soluções personalizadas com descontos progressivos.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <p class="text-lg">Ainda tem dúvidas?</p>
+                <a href="https://wa.me/55659981105299" class="inline-block mt-4 bg-triat-blue hover:bg-triat-dark text-white font-bold py-3 px-8 rounded-lg transition duration-300">Fale com nosso time</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-triat-blue text-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">Pronto para proteger seus dados?</h2>
+                <p class="text-xl opacity-90 max-w-3xl mx-auto">Entre em contato com nossa equipe de especialistas</p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-8 shadow-lg">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl font-bold mb-6">Informações de contato</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 rounded-full bg-white bg-opacity-20 flex items-center justify-center mr-4 mt-1">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold">Telefone</h4>
+                                    <p class="opacity-90">(65) 99811-05299</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 rounded-full bg-white bg-opacity-20 flex items-center justify-center mr-4 mt-1">
+                                    <i class="fas fa-comment-dots"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold">WhatsApp</h4>
+                                    <a href="https://wa.me/55659981105299" class="opacity-90 hover:underline">Clique para conversar</a>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 rounded-full bg-white bg-opacity-20 flex items-center justify-center mr-4 mt-1">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold">Horário comercial</h4>
+                                    <p class="opacity-90">Segunda a sexta, 8h às 18h</p>
+                                    <p class="opacity-90">Sábado, 9h às 13h</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 rounded-full bg-white bg-opacity-20 flex items-center justify-center mr-4 mt-1">
+                                    <i class="fas fa-headset"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold">Suporte técnico</h4>
+                                    <p class="opacity-90">24 horas por dia, 7 dias por semana</p>
+                                    <a href="https://wa.me/55659981105299" class="opacity-90 hover:underline">WhatsApp do suporte</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-xl font-bold mb-6">Envie uma mensagem</h3>
+                        
+                        <form id="contactForm" class="space-y-4">
+                            <div>
+                                <label for="name" class="block mb-1">Nome completo</label>
+                                <input type="text" id="name" class="w-full bg-white bg-opacity-20 border border-white border-opacity-30 rounded-lg px-4 py-3 placeholder-white placeholder-opacity-70 focus:outline-none focus:ring-2 focus:ring-white" required>
+                            </div>
+                            
+                            <div>
+                                <label for="email" class="block mb-1">E-mail</label>
+                                <input type="email" id="email" class="w-full bg-white bg-opacity-20 border border-white border-opacity-30 rounded-lg px-4 py-3 placeholder-white placeholder-opacity-70 focus:outline-none focus:ring-2 focus:ring-white">
+                            </div>
+                            
+                            <div>
+                                <label for="phone" class="block mb-1">Telefone</label>
+                                <input type="tel" id="phone" class="w-full bg-white bg-opacity-20 border border-white border-opacity-30 rounded-lg px-4 py-3 placeholder-white placeholder-opacity-70 focus:outline-none focus:ring-2 focus:ring-white" required>
+                            </div>
+                            
+                            <div>
+                                <label for="message" class="block mb-1">Mensagem</label>
+                                <textarea id="message" rows="4" class="w-full bg-white bg-opacity-20 border border-white border-opacity-30 rounded-lg px-4 py-3 placeholder-white placeholder-opacity-70 focus:outline-none focus:ring-2 focus:ring-white" required></textarea>
+                            </div>
+                            
+                            <button type="button" onclick="sendToWhatsApp()" class="w-full bg-white text-triat-blue font-bold py-3 px-4 rounded-lg hover:bg-gray-100 transition duration-300 mt-4">
+                                Enviar mensagem
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-full bg-triat-blue flex items-center justify-center mr-3">
+                            <i class="fas fa-cloud text-white"></i>
+                        </div>
+                        <span class="text-xl font-bold">Triat Backup</span>
+                    </div>
+                    <p class="text-gray-400">Soluções avançadas de backup em nuvem para proteger o que é mais importante para seu negócio.</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Produto</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#features" class="text-gray-400 hover:text-white transition">Recursos</a></li>
+                        <li><a href="#plans" class="text-gray-400 hover:text-white transition">Planos</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Download</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Status</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Empresa</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Sobre nós</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Blog</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Carreiras</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Imprensa</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Legal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Termos de serviço</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Política de privacidade</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">SLA</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Segurança</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0 text-gray-400">
+                    © 2023 Triat Cloud Backup. Todos os direitos reservados.
+                </div>
+                
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <button id="backToTop" class="fixed bottom-6 right-6 w-12 h-12 bg-triat-blue text-white rounded-full shadow-lg flex items-center justify-center opacity-0 invisible transition-all duration-300">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // FAQ toggle functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const icon = question.querySelector('i');
+                
+                answer.classList.toggle('hidden');
+                icon.classList.toggle('transform');
+                icon.classList.toggle('rotate-180');
+            });
+        });
+        
+        // Back to top button
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible');
+                backToTopButton.classList.add('opacity-0', 'invisible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Function to send form data to WhatsApp
+        function sendToWhatsApp() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const message = document.getElementById('message').value;
+            
+            let whatsappMessage = `Olá, meu nome é ${name}.`;
+            
+            if (phone) whatsappMessage += ` Meu telefone é ${phone}.`;
+            if (email) whatsappMessage += ` Meu e-mail é ${email}.`;
+            if (message) whatsappMessage += ` Minha mensagem: ${message}`;
+            
+            const encodedMessage = encodeURIComponent(whatsappMessage);
+            window.open(`https://wa.me/55659981105299?text=${encodedMessage}`, '_blank');
+        }
+    </script>
+</body>
+</html>
